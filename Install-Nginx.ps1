@@ -37,7 +37,7 @@ if(!$Version)
 }
 else
 {
-	$nginxDownloadFile = Join-Path $DownloadPath "nginx-${Version}.zip"
+	$nginxDownloadFile = Join-Path $DownloadPath "winsw-2.1.2-bin.exe"
 	if(!(Test-Path $nginxDownloadFile))
 	{
 		# downlaod nginx
@@ -56,6 +56,7 @@ if($winswDownloadFile)
 }
 else
 {
+    $winswDownloadFile = Join-Path $DownloadPath "nginx-${Version}.zip"
     # download winsw
     Write-Output "Downloading winsw from $winswDownloadUrl to $winswDownloadFile"
     Invoke-WebRequest -Uri $winswDownloadUrl -OutFile $winswDownloadFile
